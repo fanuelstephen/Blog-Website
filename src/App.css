@@ -1,38 +1,215 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+h1,
+h2 {
+  font-family: "PlayFar Display", serif;
+}
+
+.row {
+  width: 50%;
+}
+span {
+  color: crimson;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+h2 {
+  font-display: 30px;
+  line-height: 35px;
+  margin: 20px 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.top {
+  margin-top: 80px;
+}
+/* ----------left content------------ */
+.home {
+  display: flex;
+}
+.left-content,
+.right-content {
+  width: 50%;
+}
+.content {
+  padding: 30px;
+}
+.left-content {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  color: #fff;
+  overflow: hidden;
+}
+.home-img img {
+  position: absolute;
+  left: -40%;
+  top: 0%;
+  height: 110vh !important;
+  /* height: 130vh !important; */
+  z-index: -1;
+}
+.logo {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  color: #000;
+  background-color: #fff;
+}
+.logo h1 {
+  font-size: 40px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.left-content .text {
+  width: 45%;
+  margin-top: 15%;
+}
+.left-content .text h1 {
+  font-size: 48px;
+  /* font-size: 32px; */
+  line-height: 38px;
+  margin-top: -4rem;
+}
+.left-content .text p {
+  margin: 7px 0px 16px 0px;
+  /* margin: 10px 0 5px 0; */
+}
+.left-content .text2 {
+  float: right;
+  text-align: right;
+}
+.left-content .qrcode img {
+  margin-top: 35%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* ---------right-content----------- */
+.right-content {
+  padding: 40px;
+  color: #000;
+  position: absolute;
+  right: 0;
+}
+.img {
+  overflow: hidden;
+  transition: ease 0.5s;
+}
+img {
+  transition: ease 0.5s;
+}
+.img img:hover {
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 768px) {
+  .right-content {
+    padding: 40px;
+    right: 12px;
+  }
+  .home {
+    flex-direction: column;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .left-content,
+  .right-content {
+    width: 100%;
+    position: relative;
+  }
+  .left-content .text h1 {
+    font-size: 53px;
+    line-height: 43px;
+    margin-top: -1rem;
+  }
+  .slide .box {
+    flex-direction: row-reverse;
+  }
+  .slide .text {
+    width: 100%;
+  }
+
+  .CardTwo.slide.CardTwo.slide .box:nth-child(even) {
+    flex-direction: revert;
+  }
+  .card .box .img {
+    width: 310px;
+    height: 318px;
+    margin: 20px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 375px) {
+  .home {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .home-img img {
+    width: 918px;
+    left: -66%;
+    height: 99vh !important;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .left-content,
+  .right-content {
+    width: 100%;
+    position: relative;
+  }
+  .left-content .text h1 {
+    font-size: 40px;
+    line-height: 38px;
+    margin-top: -2rem;
+  }
+  .slide .box {
+    flex-direction: column;
+  }
+  .CardTwo.slide.slide .text {
+    width: 100%;
+    padding: 25px 15px;
+  }
+
+  .CardTwo.slide.CardTwo.slide .box:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+  .card .box .img {
+    width: 310px;
+    height: 318px;
+    margin: 20px;
+  }
+  .right-content {
+    padding: 25px;
+  }
+  .card h2 {
+    padding: 0 30px;
+  }
+  span {
+    padding: 0 30px;
+  }
+  .CardTwo .text p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .CardTwo .text h2 {
+    font-size: 21px;
+    margin: 5px 0;
+  }
+  .right-content .slide .text {
+    width: 100%;
+    padding: 40px 17px 40px 10px;
   }
 }
